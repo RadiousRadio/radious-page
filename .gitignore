@@ -13,12 +13,14 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# SolidStart / vinxi / nitro
+/.output
+/.vinxi
+/.nitro
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -38,4 +40,3 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts

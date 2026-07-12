@@ -11,7 +11,7 @@
   --stroke-2: rgba(255, 255, 255, 0.14);
   --text: #e7e9f2;
   --text-2: #a6acc2;
-  --text-3: #6b7290;
+  --text-3: #808aa8;
   --accent: #ff6b35;
   --accent-soft: rgba(255, 107, 53, 0.14);
   --accent-2: #4a9eff;
@@ -21,6 +21,7 @@
 }
 
 @theme inline {
+  --breakpoint-xs: 400px;
   --color-bg: var(--bg);
   --color-bg-2: var(--bg-2);
   --color-text: var(--text);
@@ -138,8 +139,29 @@ body {
   transform: scale(0.98);
 }
 
-/* Equalizer bars in the player preview */
+/* Scroll reveal: hidden only when JS is present (html.js), so no-JS
+   visitors and crawlers always get full content */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html.js .reveal.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  /* Equalizer bars (live-call waveform) */
   .eq-bar {
     animation: eq 0.9s ease-in-out infinite alternate;
     transform-origin: bottom;
@@ -162,15 +184,54 @@ body {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+
+  /* Hero background: two blurred color fields drifting slowly */
+  .hero-blob-a {
+    animation: blobA 26s ease-in-out infinite alternate;
+  }
+  .hero-blob-b {
+    animation: blobB 32s ease-in-out infinite alternate;
+  }
+  @keyframes blobA {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(12vw, 8vh) scale(1.25); }
+  }
+  @keyframes blobB {
+    from { transform: translate(0, 0) scale(1.15); }
+    to { transform: translate(-10vw, -6vh) scale(0.9); }
+  }
+
+  /* Hero screenshot: gentle levitation */
+  .hero-float {
+    animation: heroFloat 9s ease-in-out infinite alternate;
+  }
+  @keyframes heroFloat {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
+    width: auto;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  /* the marquee duplicates the list for a seamless loop; when static,
+     drop the aria-hidden copy so each language shows once */
+  .marquee-track [aria-hidden="true"] {
+    display: none;
   }
   html {
     scroll-behavior: auto;
   }
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  will-change: transform;
 }
 
 /* Legal pages prose */
