@@ -3,16 +3,30 @@ import { Reveal } from "./Reveal";
 export function Hero() {
   return (
     <section class="relative overflow-hidden pt-32 sm:pt-36 pb-20 sm:pb-28">
-      {/* drifting color fields behind the hero, the "station warming up" feel */}
-      <div class="absolute inset-0 -z-10" aria-hidden="true">
+      {/* Broadcast backdrop: a living aurora plus radio-wave rings that
+          radiate outward, the literal meaning of "Radious". Sits at -z-1
+          so it paints ABOVE the fixed opaque .rd-ambient layer (-z-2)
+          but behind the hero content. */}
+      <div class="absolute inset-0 -z-[1] overflow-hidden" aria-hidden="true">
         <div
           class="hero-blob hero-blob-a"
-          style="width: 42rem; height: 42rem; left: -14rem; top: -10rem; background: rgba(255,107,53,0.16);"
+          style="width: 42rem; height: 42rem; left: -14rem; top: -10rem; background: rgba(255,107,53,0.18);"
         />
         <div
           class="hero-blob hero-blob-b"
-          style="width: 36rem; height: 36rem; right: -12rem; top: 4rem; background: rgba(74,158,255,0.13);"
+          style="width: 36rem; height: 36rem; right: -12rem; top: 2rem; background: rgba(74,158,255,0.15);"
         />
+        <div
+          class="hero-blob hero-blob-c"
+          style="width: 30rem; height: 30rem; left: 30%; top: 30%; background: rgba(255,90,50,0.10);"
+        />
+        <div class="hero-rings">
+          <span class="hero-ring" />
+          <span class="hero-ring" />
+          <span class="hero-ring" />
+          <span class="hero-ring" />
+          <span class="hero-ring" />
+        </div>
       </div>
 
       <div class="mx-auto w-full max-w-6xl px-4 sm:px-6">

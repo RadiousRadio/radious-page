@@ -185,20 +185,40 @@ html.js .reveal.reveal-visible {
     to { transform: translateX(-50%); }
   }
 
-  /* Hero background: two blurred color fields drifting slowly */
-  .hero-blob-a {
-    animation: blobA 26s ease-in-out infinite alternate;
-  }
-  .hero-blob-b {
-    animation: blobB 32s ease-in-out infinite alternate;
-  }
+  /* Hero aurora: three blurred color fields drifting on independent
+     paths so the backdrop reads as alive, not a static gradient. */
+  .hero-blob-a { animation: blobA 22s ease-in-out infinite alternate; }
+  .hero-blob-b { animation: blobB 28s ease-in-out infinite alternate; }
+  .hero-blob-c { animation: blobC 25s ease-in-out infinite alternate; }
   @keyframes blobA {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(12vw, 8vh) scale(1.25); }
+    from { transform: translate(-6vw, -4vh) scale(1); }
+    to   { transform: translate(14vw, 10vh) scale(1.35); }
   }
   @keyframes blobB {
-    from { transform: translate(0, 0) scale(1.15); }
-    to { transform: translate(-10vw, -6vh) scale(0.9); }
+    from { transform: translate(6vw, 2vh) scale(1.2); }
+    to   { transform: translate(-12vw, -8vh) scale(0.85); }
+  }
+  @keyframes blobC {
+    from { transform: translate(0, 6vh) scale(0.9); }
+    to   { transform: translate(8vw, -10vh) scale(1.25); }
+  }
+
+  /* Radio-wave broadcast: concentric rings radiating outward from the
+     hero, the literal meaning of "Radious". A bright bordered circle
+     with a colour-matched glow scales out and fades, reading as a
+     signal pulse. Five staggered rings keep a concentric spread on
+     screen at all times. Only transform + opacity animate. */
+  .hero-ring {
+    animation: radiate 6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+  .hero-ring:nth-child(2) { animation-delay: 1.2s; }
+  .hero-ring:nth-child(3) { animation-delay: 2.4s; }
+  .hero-ring:nth-child(4) { animation-delay: 3.6s; }
+  .hero-ring:nth-child(5) { animation-delay: 4.8s; }
+  @keyframes radiate {
+    0%   { transform: translate(-50%, -50%) scale(0.2);  opacity: 0; }
+    10%  { opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(2.1);  opacity: 0; }
   }
 
   /* Hero screenshot: gentle levitation */
@@ -208,6 +228,42 @@ html.js .reveal.reveal-visible {
   @keyframes heroFloat {
     from { transform: translateY(0); }
     to { transform: translateY(-10px); }
+  }
+}
+
+/* Radio-wave rings: emitter sits low, so the waves radiate from around
+   the product screenshot (the app broadcasting) and stay clear of the
+   headline. */
+.hero-rings {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.hero-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(26rem, 78vw);
+  height: min(26rem, 78vw);
+  border-radius: 50%;
+  color: var(--accent);
+  border: 2px solid currentColor;
+  box-shadow: 0 0 34px -6px currentColor, inset 0 0 24px -10px currentColor;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+/* alternate the wavefront colour so the broadcast reads orange + blue */
+.hero-ring:nth-child(even) { color: var(--accent-2); }
+/* static fallback: a single faint resting ring, no motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-ring { display: none; }
+  .hero-ring:nth-child(3) {
+    display: block;
+    opacity: 0.18;
+    transform: translate(-50%, -50%) scale(1.5);
   }
 }
 @media (prefers-reduced-motion: reduce) {

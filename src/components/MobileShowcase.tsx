@@ -29,22 +29,26 @@ export function MobileShowcase() {
               aria-hidden="true"
             />
             <div
-              class="hero-float relative w-[264px] sm:w-[300px] rounded-[3rem] border border-white/12 p-2.5 shadow-[0_40px_120px_-30px_rgba(0,0,0,0.9)]"
+              class="hero-float relative w-[270px] sm:w-[300px] rounded-[3.2rem] border border-white/12 p-2.5 shadow-[0_40px_120px_-30px_rgba(0,0,0,0.9)]"
               style="background: linear-gradient(150deg, #1a2136, #0b0f1c);"
             >
-              {/* dynamic island */}
-              <div
-                class="absolute left-1/2 top-4 z-10 h-6 w-24 -translate-x-1/2 rounded-full bg-black/85"
-                aria-hidden="true"
-              />
-              <img
-                src="/screens/mobile-app.webp"
-                alt="Radious running on iPhone: a live show with cover art and player controls"
-                width="900"
-                height="1533"
-                class="w-full rounded-[2.4rem]"
-                loading="lazy"
-              />
+              {/* screen area, locked to a real phone aspect so the frame
+                  never looks squat regardless of the source capture */}
+              <div class="relative aspect-[9/19.5] overflow-hidden rounded-[2.6rem]">
+                <img
+                  src="/screens/mobile-app.webp"
+                  alt="Radious running on iPhone: a live show playing with player controls and the track queue"
+                  width="900"
+                  height="1951"
+                  class="h-full w-full object-cover object-top"
+                  loading="lazy"
+                />
+                {/* dynamic island */}
+                <div
+                  class="absolute left-1/2 top-3 z-10 h-6 w-24 -translate-x-1/2 rounded-full bg-black/85"
+                  aria-hidden="true"
+                />
+              </div>
             </div>
           </div>
         </Reveal>
