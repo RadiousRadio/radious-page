@@ -1,16 +1,14 @@
-import { Link, Meta, Title } from "@solidjs/meta";
 import { LegalShell } from "~/components/LegalShell";
 
 export default function TermsPage() {
   return (
-    <>
-      <Title>Terms &amp; Conditions | Radious</Title>
-      <Meta
-        name="description"
-        content="The terms that govern your use of Radious, the personal AI radio service."
-      />
-      <Link rel="canonical" href="https://radious.ai/terms" />
-      <LegalShell title="Terms & Conditions" updated="July 12, 2026">
+    <LegalShell
+      title="Terms & Conditions"
+      updated="August 25, 2026"
+      updatedIso="2026-08-25"
+      slug="terms"
+      description="The terms that govern your use of Radious — the personal AI radio station with hosts you hire, message and call live on air."
+    >
         <p>
           These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your access to and use of
           Radious, the personal AI radio service available at radious.ai and
@@ -35,17 +33,26 @@ export default function TermsPage() {
           activity under your account.
         </p>
 
-        <h2>3. Free trial, plans and limits</h2>
+        <h2>3. Beta access, plans and limits</h2>
         <ul>
-          <li>The free trial includes 3 shows and 1 on-air message.</li>
           <li>
-            Paid plans are billed monthly: Starter (3.99€, up to 2 shows per day), Pro
-            (7.99€, up to 20 shows, 1 studio call and 20 on-air messages per day) and
-            Ultra (50€, unlimited usage plus founder community access and feature
-            voting).
+            The Service is currently in a free founding beta. Access is free, no
+            payment method is required, and there is nothing to cancel. We may limit
+            or withdraw beta access at any time.
           </li>
           <li>
-            Daily limits are enforced server-side and reset every 24 hours. Limits and
+            When paid plans begin, they will be billed monthly: Starter (3.99€, up to
+            2 shows per day), Pro (7.99€, up to 20 shows, 1 studio call and 20 on-air
+            messages per day) and Ultra (50€, up to 50 shows, 5 studio calls and 100
+            on-air messages per day, plus founder community access and feature
+            voting). Starter and Pro put up to 2 hosts on air and Ultra up to 3. The
+            Banter and Learning host-talk types are part of Pro and Ultra; Facts and
+            Philosophy are on every plan. We will tell you before any charge is ever
+            made.
+          </li>
+          <li>
+            Daily limits reset every 24 hours. To protect the Service we also apply
+            technical usage ceilings that are independent of your plan. Limits and
             prices may change; we will notify you before changes affect a plan you
             already pay for.
           </li>
@@ -53,10 +60,12 @@ export default function TermsPage() {
 
         <h2>4. Billing and cancellation</h2>
         <p>
-          Subscriptions renew automatically each month until cancelled. You can cancel
-          anytime in the app; your plan remains active until the end of the paid
-          period. Payments are handled by our payment processor; we do not store your
-          card details. Except where required by law, payments are non-refundable.
+          No charges are made during the beta. When paid plans begin, subscriptions
+          will renew automatically each month until cancelled, you will be able to
+          cancel anytime in the app, and your plan will remain active until the end of
+          the paid period. Payments will be handled by a payment processor; we do not
+          store your card details. Except where required by law, payments are
+          non-refundable.
         </p>
 
         <h2>5. Acceptable use</h2>
@@ -128,7 +137,6 @@ export default function TermsPage() {
         <p>
           Questions about these Terms: <a href="mailto:support@radious.ai">support@radious.ai</a>.
         </p>
-      </LegalShell>
-    </>
+    </LegalShell>
   );
 }

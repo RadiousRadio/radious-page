@@ -1,13 +1,14 @@
-import { Link, Meta, Title } from "@solidjs/meta";
 import { LegalShell } from "~/components/LegalShell";
 
 export default function PrivacyPage() {
   return (
-    <>
-      <Title>Privacy Policy | Radious</Title>
-      <Meta name="description" content="How Radious collects, uses and protects your data." />
-      <Link rel="canonical" href="https://radious.ai/privacy" />
-      <LegalShell title="Privacy Policy" updated="July 12, 2026">
+    <LegalShell
+      title="Privacy Policy"
+      updated="July 12, 2026"
+      updatedIso="2026-07-12"
+      slug="privacy"
+      description="What data Radious collects, why, and what control you have over it. Calendar access is read-only, we do not sell your data, and deleting your account removes it."
+    >
         <p>
           This policy explains what data Radious collects, why, and what control you
           have over it. It applies to radious.ai and the app at app.radious.ai. We
@@ -114,7 +115,6 @@ export default function PrivacyPage() {
           take effect. Data controller: Radious, Estonia. Contact:{" "}
           <a href="mailto:support@radious.ai">support@radious.ai</a>.
         </p>
-      </LegalShell>
-    </>
+    </LegalShell>
   );
 }

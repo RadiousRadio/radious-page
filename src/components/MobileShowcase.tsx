@@ -4,15 +4,20 @@ import { Reveal } from "./Reveal";
 const POINTS = [
   {
     title: "Bring your own music",
-    body: "Free radio from Audius and Jamendo with no account, or connect your own playlists and local files.",
+    body: "Free radio from royalty-free third-party catalogues with no account, or connect your own playlists and local files.",
   },
   {
     title: "Plays on your lock screen",
     body: "Real cover art and controls on the lock screen, so your station keeps going in your pocket.",
   },
   {
-    title: "Native iOS, coming soon",
-    body: "The iPhone app is in the studio. Until it lands, the web app already runs great on mobile.",
+    // "iOS coming soon" appeared four times across the page. Repeating a
+    // not-yet is an instruction to wait: a visitor who is told three
+    // times that the good version is coming will very reasonably decide
+    // to come back for it, and never does. Said once, as a fact about
+    // the roadmap rather than an apology, it now reads as momentum.
+    title: "Add it to your home screen",
+    body: "The web app installs to your iPhone home screen and behaves like a native app, lock-screen controls and all. A real iOS build is still in development.",
   },
 ];
 
@@ -35,11 +40,28 @@ export function MobileShowcase() {
               {/* screen area, locked to a real phone aspect so the frame
                   never looks squat regardless of the source capture */}
               <div class="relative aspect-[9/19.5] overflow-hidden rounded-[2.6rem]">
+                {/* The capture carries its own status bar: the frame
+                    overlays a dynamic island at the top, and without one it
+                    landed on the app's "Hello, <name>" header — which is not
+                    where an island sits on a real phone. The bar puts it
+                    between the clock and the battery, as iOS does. It is
+                    painted in the app's own header colour rather than black,
+                    so the seam does not show; the page's .rd-grain overlay
+                    is fixed over everything and textures it along with the
+                    rest of the screenshot.
+
+                    One source, no srcset. The capture is 387px wide and the
+                    frame renders at 270-300 CSS px, so a "520w" sibling
+                    could only ever be this file upscaled — bytes without
+                    detail, which the browser does better at render time.
+                    Restore the pair if the screenshot is ever recaptured
+                    at 2x or 3x. */}
                 <img
                   src="/screens/mobile-app.webp"
-                  alt="Radious running on iPhone: a live show playing with player controls and the track queue"
-                  width="900"
-                  height="1951"
+                  alt="Radious running on an iPhone: a live show playing, with player controls and the upcoming track queue"
+                  width="387"
+                  height="839"
+                  decoding="async"
                   class="h-full w-full object-cover object-top"
                   loading="lazy"
                 />
@@ -59,8 +81,8 @@ export function MobileShowcase() {
               Your station, in your pocket.
             </h2>
             <p class="mt-4 max-w-[46ch] text-lg text-text-2 leading-relaxed">
-              Radious was built for headphones on the move. Press play and your
-              hosts ride along, songs and all.
+              Radious was built for headphones on the move. Press play and
+              your hosts come with you, songs and all.
             </p>
           </Reveal>
           <div class="mt-8 flex flex-col gap-5">

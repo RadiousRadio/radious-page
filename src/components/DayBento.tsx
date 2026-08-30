@@ -1,5 +1,4 @@
 import { For } from "solid-js";
-import { Check } from "./icons";
 import { Reveal } from "./Reveal";
 
 export function DayBento() {
@@ -26,7 +25,8 @@ export function DayBento() {
               <h3 class="font-semibold text-lg">News in your order</h3>
               <p class="mt-2 text-sm text-text-2 max-w-[52ch]">
                 Up to 10 feeds: RSS or Google News searches, dragged into
-                priority. The top feed leads every show. Stories already covered
+                priority. The hosts read across all of them and pick what is
+                most recent and most worth hearing. Stories already covered
                 stay covered for 3 days.
               </p>
               <div class="mt-5 grid gap-2 sm:grid-cols-3 text-sm">
@@ -36,16 +36,11 @@ export function DayBento() {
                 </div>
                 <div class="rounded-[10px] border border-white/8 bg-white/4 px-3 py-2.5">
                   <span class="font-mono text-[10px] uppercase tracking-wider text-text-3">2nd</span>
-                  <p class="mt-0.5 flex items-center gap-2">
-                    Hacker News
-                    <span class="inline-flex items-center gap-1 rounded-full bg-live/15 px-1.5 py-0.5 text-[10px] font-medium text-live">
-                      <Check size={10} /> covered
-                    </span>
-                  </p>
+                  <p class="mt-0.5">Hacker News</p>
                 </div>
                 <div class="rounded-[10px] border border-white/8 bg-white/4 px-3 py-2.5">
                   <span class="font-mono text-[10px] uppercase tracking-wider text-text-3">3rd</span>
-                  <p class="mt-0.5">ERR</p>
+                  <p class="mt-0.5">Google News &middot; World</p>
                 </div>
               </div>
             </div>
