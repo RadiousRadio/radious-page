@@ -9,7 +9,7 @@ export default function App() {
     <Router
       root={(props) => (
         <MetaProvider>
-          <Title>Radious | AI radio with hosts you can talk to</Title>
+          <Title>Radious | The radio station that picks up</Title>
           <div class="rd-ambient" aria-hidden="true" />
           <div class="rd-grain" aria-hidden="true" />
           <Suspense>{props.children}</Suspense>

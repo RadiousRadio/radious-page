@@ -30,7 +30,7 @@ export function TwoWay() {
               </div>
               <div class="mt-5 space-y-3">
                 <div class="ml-auto max-w-[85%] rounded-2xl rounded-br-md border border-white/10 bg-white/6 p-3 text-sm">
-                  Roast my taste in music. Gently.
+                  Did Bowie really record &ldquo;Heroes&rdquo; in Berlin?
                 </div>
                 <div class="flex justify-end gap-2 font-mono text-[10px] uppercase tracking-wider text-text-3">
                   <span class="line-through opacity-50">Sent</span>
@@ -38,12 +38,13 @@ export function TwoWay() {
                   <span class="text-live">Answered</span>
                 </div>
                 <div class="max-w-[92%] rounded-2xl rounded-bl-md p-3 text-sm" style="background: var(--accent-soft);">
-                  <span class="font-semibold text-accent">Michael:</span> Gently?
-                  You queued the same song four times before lunch.
+                  <span class="font-semibold text-accent">Michael:</span> Hansa
+                  Studios, 1977 &mdash; close enough to the Wall to see it from
+                  the control room.
                 </div>
                 <div class="max-w-[92%] rounded-2xl rounded-bl-md p-3 text-sm" style="background: var(--accent-2-soft);">
-                  <span class="font-semibold text-accent-2">Kris:</span> It
-                  is a good song. Here it is a fifth time.
+                  <span class="font-semibold text-accent-2">Kris:</span> And
+                  Fripp flew in and cut that guitar line in a single afternoon.
                 </div>
               </div>
               <p class="mt-5 text-sm text-text-2">

@@ -1,0 +1,56 @@
+# Radious
+
+> A personal AI radio station. The listener hires one to three AI radio
+> hosts, names them, chooses their voices and writes their personality
+> in a single line. The hosts present a continuous radio show built
+> around the listener's own music, reading their chosen news feeds in
+> their chosen priority order, their city's weather, their calendar for
+> the next 48 hours, and short explainers on topics they pick.
+
+Radious is made in Tallinn, Estonia by a solo founder. It runs on the
+web at app.radious.ai; a native iOS app is in development. As of August
+2026 it is in a free founding beta with a limited number of seats, and
+an open waitlist.
+
+## What makes it different from other AI audio products
+
+- **Inbound messages.** A listener can text the studio during a show.
+  The message is read on air and answered as a two-host conversation,
+  with the hosts responding to each other about it. No other consumer
+  AI audio product is known to do this.
+- **Live call-in.** A listener can start a live voice call into the
+  studio mid-show and talk to a host, who can look up current facts
+  during the call. This is an in-app voice session, not a telephone
+  line.
+- **Hosts are cast, not given.** Name, voice and personality are chosen
+  by the listener. Spotify's AI DJ, Google's NotebookLM hosts and
+  Amazon's Alexa briefings all supply a fixed presenter.
+- **A show, not a briefing.** News, weather, calendar and interests are
+  interleaved with music as a continuous programme rather than
+  delivered as a digest.
+- **31 languages**, including Estonian.
+
+## Honest limitations
+
+- News segments summarise the listener's own chosen feeds. Like any
+  system of this kind they can get a detail wrong or misplace emphasis;
+  the bulletin is a spoken headline scan, not a source of record.
+- The hosts are synthetic. Radious does not claim they are human.
+- Music comes from royalty-free third-party catalogues, or the
+  listener's own local files. It is not a licensed commercial catalogue
+  and does not include chart music.
+- Access is currently gated: new listeners join a waitlist.
+
+## Pages
+
+- [Home](https://radious.ai/): what it is, how the two-way features work, pricing, FAQ.
+- [Terms & Conditions](https://radious.ai/terms)
+- [Privacy Policy](https://radious.ai/privacy)
+- [Web app](https://app.radious.ai)
+- [Waitlist](https://app.radious.ai/waitlist): open to anyone, anywhere.
+- [Discord](https://discord.gg/TTvtbrJNP): where founding beta seats are handed out.
+- [Facebook](https://www.facebook.com/radiousradio)
+
+## Contact
+
+support@radious.ai

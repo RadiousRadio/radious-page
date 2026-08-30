@@ -40,3 +40,13 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Local scratch from the beta rewrite — a pre-rewrite snapshot and a tarball
+# of in-progress edits. Kept on disk, never shipped.
+/.backup-pre-beta
+/_to_delete
+
+# Raw screen captures. The webp files beside them are what the site serves;
+# these are the multi-hundred-KB originals they were cropped from, and
+# anything under public/ is copied into the build.
+/public/screens/*-new.png

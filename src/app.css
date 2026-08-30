@@ -75,6 +75,26 @@ body {
 }
 
 /* Glass panel, matching the app's panel treatment */
+/* Gradient text, used for the top tier's name on the pricing cards.
+
+   Guarded: `-webkit-text-fill-color: transparent` is what lets the
+   gradient show through the glyphs, and anywhere background-clip is not
+   supported that same line renders the word invisible. The flat accent
+   below is the fallback, and an invisible price tier is a much worse
+   failure than a flat-coloured one. */
+.grad-text {
+  color: var(--accent);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .grad-text {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
 .glass {
   background: var(--panel-solid);
   border: 1px solid var(--stroke);
