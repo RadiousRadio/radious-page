@@ -37,7 +37,7 @@ export const WAITLIST_URL = `${APP}/waitlist`;
  * which is exactly long enough to look alive in a Reddit thread and be
  * dead by the time the thread ranks.
  */
-export const DISCORD = "https://discord.gg/TTvtbrJNP";
+export const DISCORD = "https://discord.gg/fEwfq32X9h";
 
 /** The Facebook page. Listed in the footer and in the site's `sameAs`
  *  structured data, which is what search engines read to tie the official
