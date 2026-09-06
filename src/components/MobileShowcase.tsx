@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 const POINTS = [
   {
     title: "Bring your own music",
-    body: "Free radio from royalty-free third-party catalogues with no account, or connect your own playlists and local files.",
+    body: "Free radio from royalty-free third-party catalogues with no account, or play your own local files.",
   },
   {
     title: "Plays on your lock screen",
