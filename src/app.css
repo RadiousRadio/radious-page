@@ -116,6 +116,13 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* background-clip: text paints glyphs only inside the span's own box, and
+     negative letter-spacing (the h1's tracking-tighter) ends that box before
+     the last letter's ink does — the "p" of "picks up" lost its right edge
+     exactly where the period starts. Extend the painted box past the last
+     glyph and pull what follows back by the same amount, so nothing moves. */
+  padding-inline-end: 0.1em;
+  margin-inline-end: -0.1em;
 }
 
 /* Primary CTA: pill, app play-button gradient + glow */
