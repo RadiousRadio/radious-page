@@ -44,4 +44,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://radious.ai/sitemap.xml
+Sitemap: https://www.radious.ai/sitemap.xml
