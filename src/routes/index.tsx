@@ -13,7 +13,10 @@ import { Closer } from "~/components/Closer";
 import { Footer } from "~/components/Footer";
 import { DISCORD, FACEBOOK, SUPPORT_EMAIL } from "~/lib/site";
 
-const SITE = "https://radious.ai";
+// The host that actually serves a 200. The apex 308-redirects here, so an
+// apex canonical / og:url / sitemap entry points one hop away from the
+// live page — which is the opposite of what a canonical is for.
+const SITE = "https://www.radious.ai";
 
 /**
  * META COPY — written for the places it will actually be read.

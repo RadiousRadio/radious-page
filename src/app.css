@@ -87,6 +87,11 @@ body {
 }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .grad-text {
+    /* inline-block, or the gradient is painted across the FULL width of the
+       flex item this sits in and the word — occupying one corner of that box —
+       samples a single flat colour. Same reason .accent-text works: it is a
+       span. */
+    display: inline-block;
     background: linear-gradient(120deg, var(--accent), var(--accent-2));
     -webkit-background-clip: text;
     background-clip: text;
@@ -123,6 +128,12 @@ body {
      glyph and pull what follows back by the same amount, so nothing moves. */
   padding-inline-end: 0.1em;
   margin-inline-end: -0.1em;
+  /* ...and on EVERY line the span wraps onto, not just the last one. With the
+     default `slice` the inline padding above is applied once, at the end of
+     the final fragment, so a headline that wraps mid-span still clipped the
+     word ending the first line. */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* Primary CTA: pill, app play-button gradient + glow */

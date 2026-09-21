@@ -30,6 +30,19 @@ import { createSignal, onCleanup, Show } from "solid-js";
  * play button.
  */
 
+/**
+ * The clip this plays is NOT in the repo, so the player hides itself (see
+ * `ok` below) and the browser logs one 404 per page load until somebody adds
+ * it. That is by design — a missing clip must not break the hero — but it is
+ * also why the hero currently has no player at all.
+ *
+ * TO ENABLE: save a mono MP3, roughly 90 seconds and at most ~1.1 MB, as
+ * `public/demo/sample-show.mp3`. Nothing else needs changing.
+ *
+ * (This note used to live in `public/demo/README.txt`, which meant it was
+ * served to the public internet at /demo/README.txt — naming an internal
+ * source path to anyone who asked. It belongs next to the code it describes.)
+ */
 const SRC = "/demo/sample-show.mp3";
 
 export function DemoPlayer(props: { label?: string }) {
