@@ -83,8 +83,18 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.22}>
             {/* An audio product has to be audible before it is buyable.
-                Hides itself if public/demo/sample-show.mp3 is absent. */}
-            <DemoPlayer label="90 seconds of a real show" />
+                Hides itself if public/demo/sample-show.mp3 is absent. The
+                clip is a real free-station bulletin, then a song; the
+                song's licence (CC BY-ND) requires the credit. */}
+            <DemoPlayer
+              label="A real show: the world news, then music"
+              credit={{
+                work: "“Face In The Shadows” by Hangman, on Jamendo",
+                href: "https://www.jamendo.com/track/339430",
+                licence: "CC BY-ND 3.0",
+                licenceHref: "https://creativecommons.org/licenses/by-nd/3.0/",
+              }}
+            />
           </Reveal>
           <Reveal delay={0.28}>
             <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
