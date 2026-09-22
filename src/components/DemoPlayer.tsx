@@ -34,11 +34,17 @@ import { createSignal, onCleanup, onMount, Show } from "solid-js";
  * Mono MP3 at 96 kbps, about 70 seconds, under the ~1.1 MB it may cost
  * next to the hero image.
  *
- * TO RE-MAKE IT: `bun run preview:free-radio` in radious-cron writes a fresh
- * bulletin, one MP3 per line, from the live pipeline; mix those with the
- * api's public/assets/promos jingle (News1) and bed (NewsBG1 at 0.10),
- * then the Promo1 sting and five seconds of music, mono at 96 kbps. When
- * the music changes, change MUSIC_CREDIT below with it — the licence
+ * TO RE-MAKE IT: `scripts/build-sample-show.sh`, which documents what to
+ * feed it — a fresh read from radious-cron's `preview:free-radio`, the
+ * api's promos, and five seconds of music. It is a script rather than a
+ * paragraph because of the LEVELS: out of the pipeline the read lands
+ * around -28 LUFS against the song's -15, so a listener turns it up for
+ * the news and is hit by the music. Every part is normalised to -16 LUFS
+ * (EBU R128, the podcast/web convention) at -1.5 dBTP, in mono, which is
+ * what ships. The clip measures -16.7 LUFS integrated, -1.6 dBTP, and the
+ * four parts sit within 0.5 LU of each other.
+ *
+ * When the music changes, change MUSIC_CREDIT below with it — the licence
  * requires the attribution, and the track has to be one whose licence
  * permits this at all. Of the fifty on the production Radious top 50,
  * exactly one does.
