@@ -344,3 +344,74 @@ html.js .reveal.reveal-visible {
 .legal p { margin: 0.6rem 0; }
 .legal ul { list-style: disc; padding-left: 1.4rem; margin: 0.6rem 0; }
 .legal a { color: var(--accent-2); }
+
+/* ── The play button on the hero screenshot ──────────────────────────
+   The interactive twin of the button drawn in public/screens/hero-app.webp,
+   sitting exactly on top of it: the shot's is 72px across, centred at
+   (729.5, 572.5) of 1459x990, which is 50% / 57.828% and 4.935% of the
+   image width. Gradient, shadow and icon size are the app's own transport
+   button (radious-web app.css, .rd-tbtn.play), so the thing a visitor
+   presses here is the thing they will press in the product.
+   The 34px floor is for phones, where a faithful 4.935% would be 16px. */
+.hero-play {
+  position: absolute;
+  left: 50%;
+  top: 57.828%;
+  transform: translate(-50%, -50%);
+  width: max(34px, 4.935%);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #ff8a5a);
+  box-shadow: 0 10px 30px -5px rgba(255, 107, 53, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Tap target, not decoration: on a phone the button itself is 34px, and a
+   finger needs 44. Invisible, and only over the screenshot. */
+.hero-play::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+}
+.hero-play svg {
+  width: 36%;
+  height: 36%;
+}
+.hero-play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 14px 40px -5px rgba(255, 107, 53, 0.85);
+}
+.hero-play:active {
+  transform: translate(-50%, -50%) scale(0.97);
+}
+.hero-play:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+/* The glow ring lives on ::after so the button's own box-shadow keeps its
+   resting depth while the ring expands and fades. */
+.hero-play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* Only while paused: once it is playing, the pause icon is the signal
+     and a pulsing button would just be noise. */
+  .hero-play:not(.playing)::after {
+    animation: heroPlayPulse 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+  @keyframes heroPlayPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.55); }
+    70% { box-shadow: 0 0 0 16px rgba(255, 107, 53, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+  }
+}

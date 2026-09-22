@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 const HOSTS = [
   {
     name: "Kris",
-    voice: "Voice: Hannah · Official",
+    voice: "Voice: Sarah · Official",
     style: "witty, a little sarcastic",
     grad: "linear-gradient(135deg, #ff6b35, #ffa875)",
   },

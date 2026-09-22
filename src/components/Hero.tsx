@@ -1,6 +1,6 @@
 import { onMount } from "solid-js";
 import { Reveal } from "./Reveal";
-import { DemoPlayer } from "./DemoPlayer";
+import { DemoPlayer, MUSIC_CREDIT } from "./DemoPlayer";
 import { appUrl, APP, captureSource, enhanceAppLinks } from "~/lib/track";
 import { DISCORD, WAITLIST_URL } from "~/lib/site";
 
@@ -82,19 +82,13 @@ export function Hero() {
             </p>
           </Reveal>
           <Reveal delay={0.22}>
-            {/* An audio product has to be audible before it is buyable.
-                Hides itself if public/demo/sample-show.mp3 is absent. The
-                clip is a real free-station bulletin, then a song; the
-                song's licence (CC BY-ND) requires the credit. */}
-            <DemoPlayer
-              label="A real show: the world news, then music"
-              credit={{
-                work: "“Face In The Shadows” by Hangman, on Jamendo",
-                href: "https://www.jamendo.com/track/339430",
-                licence: "CC BY-ND 3.0",
-                licenceHref: "https://creativecommons.org/licenses/by-nd/3.0/",
-              }}
-            />
+            {/* An audio product has to be audible before it is buyable —
+                and the control that plays it is the play button on the
+                screenshot below, not a second one up here. This line is
+                what tells a visitor the picture is live. */}
+            <p class="mx-auto mt-5 text-[13px] text-text-3">
+              Press play on the studio below &mdash; 70 seconds of a real show.
+            </p>
           </Reveal>
           <Reveal delay={0.28}>
             <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -135,30 +129,57 @@ export function Hero() {
               aria-hidden="true"
             />
             <div class="glass overflow-hidden p-1.5 shadow-[0_40px_120px_-30px_rgba(0,0,0,0.9)]">
-              {/* LCP element. srcset/sizes MIRROR the preload in
-                  entry-server.tsx — change one, change both, or the
-                  browser fetches two different files. A phone at 375
-                  CSS px would otherwise pull the full-width source to
-                  paint a 375px box; the 1200w sibling is 67 KB against
-                  90 KB.
+              {/* The positioning context for the play button, which sits on
+                  the one drawn in the shot. leading-[0] keeps the inline
+                  image from adding a baseline gap under it, which would
+                  shift the button off its mark. */}
+              <div class="relative leading-[0]">
+                {/* LCP element. srcset/sizes MIRROR the preload in
+                    entry-server.tsx — change one, change both, or the
+                    browser fetches two different files. A phone at 375
+                    CSS px would otherwise pull the full-width source to
+                    paint a 375px box; the 1200w sibling is 67 KB against
+                    90 KB.
 
-                  alt is written as a description of what is happening
-                  in the screenshot rather than a keyword list — it is
-                  read aloud by screen readers and is one of the few
-                  pieces of indexable text on an image-led page. */}
-              <img
-                src="/screens/hero-app.webp"
-                srcset="/screens/hero-app-1200.webp 1200w, /screens/hero-app.webp 1459w"
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                alt="The Radious studio live on air: two AI hosts discussing the news between songs, with the listener's calendar, headlines and track queue around them"
-                width="1459"
-                height="990"
-                class="w-full rounded-[11px]"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
+                    alt is written as a description of what is happening
+                    in the screenshot rather than a keyword list — it is
+                    read aloud by screen readers and is one of the few
+                    pieces of indexable text on an image-led page. */}
+                <img
+                  src="/screens/hero-app.webp"
+                  srcset="/screens/hero-app-1200.webp 1200w, /screens/hero-app.webp 1459w"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  alt="The Radious studio live on air: two AI hosts discussing the news between songs, with the listener's calendar, headlines and track queue around them"
+                  width="1459"
+                  height="990"
+                  class="w-full rounded-[11px]"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+                <DemoPlayer />
+              </div>
             </div>
+            {/* The music's licence asks for this, and a visitor who liked
+                the track should be able to find the artist. */}
+            <p class="mt-3 text-center text-[11px] text-text-3">
+              Music:{" "}
+              <a
+                href={MUSIC_CREDIT.href}
+                rel="noopener"
+                class="underline decoration-white/20 underline-offset-2 hover:text-text-2"
+              >
+                {MUSIC_CREDIT.work}
+              </a>{" "}
+              ·{" "}
+              <a
+                href={MUSIC_CREDIT.licenceHref}
+                rel="license noopener"
+                class="whitespace-nowrap underline decoration-white/20 underline-offset-2 hover:text-text-2"
+              >
+                {MUSIC_CREDIT.licence}
+              </a>
+            </p>
           </div>
         </Reveal>
       </div>
