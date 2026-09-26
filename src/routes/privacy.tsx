@@ -4,8 +4,8 @@ export default function PrivacyPage() {
   return (
     <LegalShell
       title="Privacy Policy"
-      updated="September 14, 2026"
-      updatedIso="2026-09-14"
+      updated="September 26, 2026"
+      updatedIso="2026-09-26"
       slug="privacy"
       description="What data Radious collects, why, and what control you have over it. Calendar access is read-only, we never sell your personal data or use it to target advertising, and deleting your account removes it."
     >
@@ -19,7 +19,9 @@ export default function PrivacyPage() {
         <ul>
           <li>
             <strong>Account data:</strong> your name (what the hosts call you), email
-            address and authentication details, managed through our sign-in provider.
+            address and authentication details, managed through our sign-in provider,
+            and a record of which versions of our Terms and this policy you accepted,
+            and when.
           </li>
           <li>
             <strong>Station preferences:</strong> hosts you create, voices and show
@@ -174,8 +176,8 @@ export default function PrivacyPage() {
 
         <h2>11. Changes and contact</h2>
         <p>
-          We will announce material changes to this policy in the app before they
-          take effect. Data controller: Radious, Estonia. Contact:{" "}
+          We will tell you about material changes to this policy by email or in the
+          app before they take effect; the date at the top shows when it last changed. Data controller: Radious, Estonia. Contact:{" "}
           <a href="mailto:support@radious.ai">support@radious.ai</a>.
         </p>
     </LegalShell>

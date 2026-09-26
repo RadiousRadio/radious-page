@@ -4,8 +4,8 @@ export default function TermsPage() {
   return (
     <LegalShell
       title="Terms & Conditions"
-      updated="September 14, 2026"
-      updatedIso="2026-09-14"
+      updated="September 26, 2026"
+      updatedIso="2026-09-26"
       slug="terms"
       description="The terms that govern your use of Radious — the personal AI radio station with hosts you hire, message and call live on air."
     >
@@ -138,7 +138,7 @@ export default function TermsPage() {
           answer them on air.
         </p>
 
-        <h2>10. Availability and changes</h2>
+        <h2>10. Availability and changes to the Service</h2>
         <p>
           We aim for high availability but do not guarantee uninterrupted service.
           Current status is published at status.radious.ai. We may change or
@@ -162,14 +162,46 @@ export default function TermsPage() {
           that violate these Terms.
         </p>
 
-        <h2>13. Governing law</h2>
+        <h2>13. Changes to these Terms</h2>
+        <p>
+          We may update these Terms from time to time &mdash; for example to reflect
+          changes to the Service or to our plans, new legal requirements, or to
+          prevent misuse. The &ldquo;Last updated&rdquo; date at the top of this page
+          shows when they last changed. Previous versions are available on request.
+        </p>
+        <ul>
+          <li>
+            <strong>Material changes.</strong> If a change materially affects your
+            rights or obligations, we will tell you by email or in the app at least
+            30 days before it takes effect and explain what is changing. From that
+            date, the app will ask you to accept the updated Terms before you
+            continue using the Service.
+          </li>
+          <li>
+            <strong>Other changes.</strong> Changes that do not disadvantage you,
+            such as clarifications, corrections or new features, take effect when we
+            publish them. Changes required by law take effect when the law requires.
+          </li>
+          <li>
+            <strong>If you do not agree.</strong> You can stop using the Service and
+            delete your account in the app at any time. If you are on a paid plan
+            and cancel before a material change takes effect, we will refund the
+            unused part of the period you have already paid for on request.
+          </li>
+        </ul>
+        <p>
+          If you keep using the Service after a change takes effect, the updated
+          Terms apply to you.
+        </p>
+
+        <h2>14. Governing law</h2>
         <p>
           These Terms are governed by the laws of the Republic of Estonia. Disputes
           are resolved by the courts of Estonia, without limiting mandatory consumer
           protections in your country of residence.
         </p>
 
-        <h2>14. Contact</h2>
+        <h2>15. Contact</h2>
         <p>
           Questions about these Terms: <a href="mailto:support@radious.ai">support@radious.ai</a>.
         </p>

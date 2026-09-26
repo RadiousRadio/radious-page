@@ -31,7 +31,29 @@ Any static host works. Recommended: Vercel or Netlify (both detect the SolidStar
 
 - Pricing tiers: `src/components/Pricing.tsx`
 - Section copy: `src/components/*.tsx`
-- Legal pages: `src/routes/terms.tsx`, `src/routes/privacy.tsx`
+- Legal pages: `src/routes/terms.tsx`, `src/routes/privacy.tsx` — see below before changing them
+
+## Changing the Terms or the Privacy Policy
+
+The app records which version of each page every listener accepted, and a
+version is the page's "Last updated" date. So a change to the text is a change
+in two repos:
+
+1. Edit the page and set `updated` / `updatedIso` to the day it goes live.
+2. In radious-api, set `LEGAL_CURRENT` in `src/services/legal.ts` to the same
+   dates. New sign-ups are recorded against it. Deploy this site first, then
+   the api, so no one is ever recorded against text they could not read yet.
+3. Material change (anything that takes something away or adds an obligation):
+   tell listeners by email or in the app at least 30 days before it takes
+   effect (Terms section 13), and on that day raise `LEGAL_REQUIRED` in the
+   same file. Everyone below it is asked to accept again in the app. Leave it
+   alone for a typo fix, so it never stops anyone.
+4. Rewrite `LEGAL_SUMMARY` there: it is what the app's "We've updated our
+   Terms" screen says changed.
+
+Git history is the archive of every version, so commit each one on its own.
+"Previous versions are available on request" (Terms section 13) is answered
+from it.
 - SEO metadata: `src/routes/index.tsx` + `src/entry-server.tsx`
 - Social share image: `public/og.png`
 - App screenshots: `public/screens/*.webp` (regenerate via `radious-web` → `bunx playwright test --config playwright.screens.config.ts`)
