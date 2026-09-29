@@ -104,16 +104,23 @@ const TIERS = [
  * comparison it cannot win, and make the prices look like the expensive way
  * to the same radio. As a band underneath it reads as what it is: the way in.
  *
+ * ON DEMAND, SAID THREE TIMES (badge, tagline, first line). "Free radio" and
+ * "every four hours" read like a broadcast you tune into and catch or miss.
+ * It is not: pressing Play starts the latest edition's bulletin and talk
+ * show there and then, and a new edition is spliced in at a song boundary
+ * while you listen (radious-web's free-radio player).
+ *
  * Every line is true of the product today. If radious-cron's cadence or
  * language changes, change it here in the same breath.
  */
 const FREE = {
   name: "Free radio",
-  tagline: "For tuning in first.",
+  badge: "On-demand news & talk",
+  tagline: "News and talk when you press play.",
   features: [
-    "A world-news bulletin and a talk show every four hours",
-    "Royalty-free music, your playlists and local files",
-    "One shared station, in English: no show of your own",
+    "The latest world-news bulletin and talk show, not a broadcast you have to catch",
+    "A new edition every four hours, the same for every free listener, in English",
+    "Royalty-free music, your playlists and local files in between",
   ],
 };
 
@@ -204,6 +211,9 @@ export function Pricing() {
             of thing and not a cheaper card. */}
         <Reveal delay={0.24} class="mt-8">
           <div class="glass flex flex-col gap-6 p-7 sm:p-8 lg:flex-row lg:items-center lg:gap-10">
+            <span class="absolute -top-3 left-6 rounded-full border border-accent-2/40 bg-bg-2 px-3 py-1 text-[11px] font-semibold text-accent-2">
+              {FREE.badge}
+            </span>
             <div class="lg:w-56 lg:shrink-0">
               <h3 class="text-lg font-semibold">{FREE.name}</h3>
               <p class="mt-1 text-sm text-text-3">{FREE.tagline}</p>
