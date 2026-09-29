@@ -92,6 +92,38 @@ const TIERS = [
   },
 ];
 
+/**
+ * The free option, under the plans rather than beside them.
+ *
+ * It is not a fourth tier to weigh against the other three: a free
+ * listener gets no show of their own (showsPerDay 0 in radious-api's
+ * entitlements). What they get is the free station — radious-cron writes
+ * one world-news bulletin and one talk show every FREE_RADIO_EVERY_HOURS
+ * (4 by default), in English, for every free listener at once — with their
+ * own music in between. As a fourth card it would invite a line-by-line
+ * comparison it cannot win, and make the prices look like the expensive way
+ * to the same radio. As a band underneath it reads as what it is: the way in.
+ *
+ * ON DEMAND, SAID THREE TIMES (badge, tagline, first line). "Free radio" and
+ * "every four hours" read like a broadcast you tune into and catch or miss.
+ * It is not: pressing Play starts the latest edition's bulletin and talk
+ * show there and then, and a new edition is spliced in at a song boundary
+ * while you listen (radious-web's free-radio player).
+ *
+ * Every line is true of the product today. If radious-cron's cadence or
+ * language changes, change it here in the same breath.
+ */
+const FREE = {
+  name: "Free radio",
+  badge: "On-demand news & talk",
+  tagline: "News and talk when you press play.",
+  features: [
+    "The latest world-news bulletin and talk show, not a broadcast you have to catch",
+    "A new edition every four hours, the same for every free listener, in English",
+    "Royalty-free music, your playlists and local files in between",
+  ],
+};
+
 export function Pricing() {
   return (
     <section id="pricing" class="py-24 sm:py-32">
@@ -173,6 +205,44 @@ export function Pricing() {
             )}
           </For>
         </div>
+
+        {/* The free station, apart from the plans — see FREE. Blue ticks
+            rather than the plans' orange, so it reads as a different kind
+            of thing and not a cheaper card. */}
+        <Reveal delay={0.24} class="mt-8">
+          <div class="glass flex flex-col gap-6 p-7 sm:p-8 lg:flex-row lg:items-center lg:gap-10">
+            <span class="absolute -top-3 left-6 rounded-full border border-accent-2/40 bg-bg-2 px-3 py-1 text-[11px] font-semibold text-accent-2">
+              {FREE.badge}
+            </span>
+            <div class="lg:w-56 lg:shrink-0">
+              <h3 class="text-lg font-semibold">{FREE.name}</h3>
+              <p class="mt-1 text-sm text-text-3">{FREE.tagline}</p>
+              <p class="mt-5">
+                <span class="text-4xl font-bold tracking-tight">0€</span>
+                <span class="text-text-3 text-sm"> / month</span>
+              </p>
+            </div>
+            <ul class="flex-1 space-y-3.5 text-sm text-text-2">
+              <For each={FREE.features}>
+                {(f) => (
+                  <li class="flex gap-2.5">
+                    <Check size={16} class="mt-0.5 shrink-0 text-accent-2" />
+                    {f}
+                  </li>
+                )}
+              </For>
+            </ul>
+            <div class="lg:w-52 lg:shrink-0">
+              <a
+                href={appUrl(WAITLIST_URL)}
+                data-umami-event="waitlist-pricing-free"
+                class="cta-ghost w-full justify-center px-5 py-3 text-sm"
+              >
+                Join the waitlist
+              </a>
+            </div>
+          </div>
+        </Reveal>
 
         {/* As small and as quiet as it can be while still being on the
             page — the cards say a number and VAT makes that number not
