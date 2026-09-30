@@ -45,7 +45,7 @@ const TIERS = [
       "2 shows a day",
       "2 hosts on air",
       "All 31 languages",
-      "Free radio and local files",
+      "Royalty-free music and local files",
       "News, weather and calendar on air",
     ],
     highlight: false,
@@ -112,9 +112,10 @@ const TIERS = [
  *
  * NAMED "Free", like the plan it is (the app's `free` plan, "the free plan"
  * in the Terms) — never "Free radio". That name is taken: it is the free
- * music catalogue every plan has, on the Starter card above, in the FAQ, in
- * Terms section 6 and in the app. A band called "Free radio" under a card
- * listing "Free radio" read as the same thing sold twice.
+ * music catalogue every plan has, in the FAQ, in Terms section 6 and in the
+ * app. A band called "Free radio" under a Starter card that listed "Free
+ * radio and local files" read as the same thing sold twice, so the card now
+ * says what the catalogue is: "Royalty-free music and local files".
  *
  * Every line is true of the product today. If radious-cron's cadence or
  * language changes, change it here in the same breath.
