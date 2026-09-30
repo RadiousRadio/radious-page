@@ -45,7 +45,10 @@ const TIERS = [
       "2 shows a day",
       "2 hosts on air",
       "All 31 languages",
-      "Free radio and local files",
+      // Same words as the Free band: music is on every plan (radious-api
+      // enforces it by never checking), so a paid card listing less of it
+      // than the free one read as if playlists were a free-only extra.
+      "Royalty-free music, your playlists and local files",
       "News, weather and calendar on air",
     ],
     highlight: false,
@@ -104,17 +107,25 @@ const TIERS = [
  * comparison it cannot win, and make the prices look like the expensive way
  * to the same radio. As a band underneath it reads as what it is: the way in.
  *
- * ON DEMAND, SAID THREE TIMES (badge, tagline, first line). "Free radio" and
- * "every four hours" read like a broadcast you tune into and catch or miss.
- * It is not: pressing Play starts the latest edition's bulletin and talk
- * show there and then, and a new edition is spliced in at a song boundary
- * while you listen (radious-web's free-radio player).
+ * ON DEMAND, SAID THREE TIMES (badge, tagline, first line). "Every four
+ * hours" reads like a broadcast you tune into and catch or miss. It is not:
+ * pressing Play starts the latest edition's bulletin and talk show there and
+ * then, and a new edition is spliced in at a song boundary while you listen
+ * (radious-web's free-radio player).
+ *
+ * NAMED "Free", like the plan it is (the app's `free` plan, "the free plan"
+ * in the Terms) — never "Free radio". That name is taken: it is the free
+ * music catalogue every plan has, in the FAQ, in Terms section 6 and in the
+ * app. A band called "Free radio" under a Starter card that listed "Free
+ * radio and local files" read as the same thing sold twice, so the card now
+ * says what the catalogue is, in the band's own words: "Royalty-free music,
+ * your playlists and local files".
  *
  * Every line is true of the product today. If radious-cron's cadence or
  * language changes, change it here in the same breath.
  */
 const FREE = {
-  name: "Free radio",
+  name: "Free",
   badge: "On-demand news & talk",
   tagline: "News and talk when you press play.",
   features: [
