@@ -104,17 +104,23 @@ const TIERS = [
  * comparison it cannot win, and make the prices look like the expensive way
  * to the same radio. As a band underneath it reads as what it is: the way in.
  *
- * ON DEMAND, SAID THREE TIMES (badge, tagline, first line). "Free radio" and
- * "every four hours" read like a broadcast you tune into and catch or miss.
- * It is not: pressing Play starts the latest edition's bulletin and talk
- * show there and then, and a new edition is spliced in at a song boundary
- * while you listen (radious-web's free-radio player).
+ * ON DEMAND, SAID THREE TIMES (badge, tagline, first line). "Every four
+ * hours" reads like a broadcast you tune into and catch or miss. It is not:
+ * pressing Play starts the latest edition's bulletin and talk show there and
+ * then, and a new edition is spliced in at a song boundary while you listen
+ * (radious-web's free-radio player).
+ *
+ * NAMED "Free", like the plan it is (the app's `free` plan, "the free plan"
+ * in the Terms) — never "Free radio". That name is taken: it is the free
+ * music catalogue every plan has, on the Starter card above, in the FAQ, in
+ * Terms section 6 and in the app. A band called "Free radio" under a card
+ * listing "Free radio" read as the same thing sold twice.
  *
  * Every line is true of the product today. If radious-cron's cadence or
  * language changes, change it here in the same breath.
  */
 const FREE = {
-  name: "Free radio",
+  name: "Free",
   badge: "On-demand news & talk",
   tagline: "News and talk when you press play.",
   features: [
