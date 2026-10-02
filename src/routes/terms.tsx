@@ -4,8 +4,8 @@ export default function TermsPage() {
   return (
     <LegalShell
       title="Terms & Conditions"
-      updated="September 30, 2026"
-      updatedIso="2026-09-30"
+      updated="October 3, 2026"
+      updatedIso="2026-10-03"
       slug="terms"
       description="The terms that govern your use of Radious — the personal AI radio station with hosts you hire, message and call live on air."
     >
@@ -95,6 +95,26 @@ export default function TermsPage() {
           free station, world news from sources we select; attribution stays with
           the original publishers.
         </p>
+        <ul>
+          <li>
+            <strong>Who uploads the music.</strong> The songs on Free radio are
+            uploaded to Audius and Jamendo by their artists and other users, not
+            by us, and those platforms host them. We cannot check who holds the
+            rights to every song. If someone uploads a song there without the
+            right to share it, the responsibility for that upload is theirs, not
+            ours.
+          </li>
+          <li>
+            <strong>Copyright removal requests.</strong> If you own the rights to
+            a song that plays on Radious and want it removed, email{" "}
+            <a href="mailto:support@radious.ai">support@radious.ai</a> with the
+            song title, the artist and a link to the track or the playlist it
+            played in, and tell us how you hold the rights. We will check the
+            request and stop the song playing on Radious. The recording itself is
+            hosted by Audius or Jamendo, so to have it removed there too, contact
+            them.
+          </li>
+        </ul>
 
         <h2>7. Sponsorship and promotional segments</h2>
         <p>
