@@ -4,8 +4,8 @@ export default function TermsPage() {
   return (
     <LegalShell
       title="Terms & Conditions"
-      updated="October 3, 2026"
-      updatedIso="2026-10-03"
+      updated="October 7, 2026"
+      updatedIso="2026-10-07"
       slug="terms"
       description="The terms that govern your use of Radious — the personal AI radio station with hosts you hire, message and call live on air."
     >
@@ -86,7 +86,7 @@ export default function TermsPage() {
           <li>Do not use the Service to infringe anyone&rsquo;s intellectual property or privacy rights.</li>
         </ul>
 
-        <h2>6. Music and third-party content</h2>
+        <h2>6. Music, voices and third-party content</h2>
         <p>
           Free radio streams music from Audius and Jamendo under their respective
           licenses. Local file playback uses files you already own. You are
@@ -112,6 +112,27 @@ export default function TermsPage() {
             played in, and tell us how you hold the rights. We will check the
             request and stop the song playing on Radious. The recording itself is
             hosted by Audius or Jamendo, so to have it removed there too, contact
+            them.
+          </li>
+          <li>
+            <strong>Host voices.</strong> You choose your hosts&rsquo; voices from
+            the voice libraries of our text-to-speech providers, Fish Audio and
+            ElevenLabs. Most of those voices are made and published by the
+            providers&rsquo; users, not by us. We may remove any voice from
+            Radious at any time, for example one that imitates a real person
+            without their permission. A host whose voice is removed carries on in
+            another voice.
+          </li>
+          <li>
+            <strong>Voice removal requests.</strong> If a host voice on Radious
+            imitates you, or someone you represent, without permission, or
+            otherwise infringes your rights, email{" "}
+            <a href="mailto:support@radious.ai">support@radious.ai</a> with the
+            voice&rsquo;s name as the app shows it, a link to the voice if you have
+            one, and how the voice concerns you. We will check the request and
+            remove the voice from Radious: it can no longer be chosen, and hosts
+            already using it switch to another voice. The voice itself is hosted
+            by Fish Audio or ElevenLabs, so to have it removed there too, contact
             them.
           </li>
         </ul>
