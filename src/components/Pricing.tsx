@@ -34,6 +34,15 @@ import { appUrl, APP } from "~/lib/track";
  *    (CALLS_PER_USER_PER_DAY, default 5). A price card promising more
  *    call-ins than the server will grant is a refund request with a
  *    delay on it.
+ *
+ * 4. Premium voices are Ultra's (`premiumVoices` in radious-api's
+ *    entitlements): the app's Premium tab, ElevenLabs' voice library, and
+ *    the curated ElevenLabs voices on its Official tab. Enforced twice in
+ *    radious-api — the catalogues refuse any other plan, and a Premium
+ *    host airs in a Fish stand-in below Ultra. The line says "voices",
+ *    not "unlimited": past the daily ElevenLabs allowance
+ *    (ELEVENLABS_DAILY_CHARS_PER_USER) a Premium host is voiced by its
+ *    stand-in for the rest of the day.
  */
 
 const TIERS = [
@@ -78,6 +87,7 @@ const TIERS = [
       "5 studio calls a day",
       "100 on-air messages a day",
       "3 hosts on air",
+      "Premium ElevenLabs host voices",
       "Founder community access",
       "Feature voting: you pick what ships",
       // Closes the card. Banter and Learning are NOT listed above it even
