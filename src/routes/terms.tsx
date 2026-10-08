@@ -4,8 +4,8 @@ export default function TermsPage() {
   return (
     <LegalShell
       title="Terms & Conditions"
-      updated="October 7, 2026"
-      updatedIso="2026-10-07"
+      updated="October 9, 2026"
+      updatedIso="2026-10-09"
       slug="terms"
       description="The terms that govern your use of Radious — the personal AI radio station with hosts you hire, message and call live on air."
     >
@@ -50,8 +50,11 @@ export default function TermsPage() {
             on-air messages per day, plus founder community access and feature
             voting). Starter and Pro put up to 2 hosts on air and Ultra up to 3. The
             Banter and Learning host-talk types are part of Pro and Ultra; Facts and
-            Philosophy are on every plan. We will tell you before any charge is ever
-            made.
+            Philosophy are on every plan. Premium host voices are part of Ultra, with
+            a daily allowance of speech. A host with a Premium voice speaks in a
+            standard voice instead on any other plan, once the day&rsquo;s allowance
+            is used up, and while the Premium voice&rsquo;s provider is unavailable.
+            We will tell you before any charge is ever made.
           </li>
           <li>
             There is also a free plan. It does not include shows of your own,
@@ -116,8 +119,8 @@ export default function TermsPage() {
           </li>
           <li>
             <strong>Host voices.</strong> You choose your hosts&rsquo; voices from
-            the voice libraries of our text-to-speech providers, Fish Audio and
-            ElevenLabs. Most of those voices are made and published by the
+            the voice libraries of our text-to-speech providers, such as Fish
+            Audio. Most of those voices are made and published by the
             providers&rsquo; users, not by us. We may remove any voice from
             Radious at any time, for example one that imitates a real person
             without their permission. A host whose voice is removed carries on in
@@ -132,8 +135,9 @@ export default function TermsPage() {
             one, and how the voice concerns you. We will check the request and
             remove the voice from Radious: it can no longer be chosen, and hosts
             already using it switch to another voice. The voice itself is hosted
-            by Fish Audio or ElevenLabs, so to have it removed there too, contact
-            them.
+            by the text-to-speech provider whose library it comes from. We will
+            tell you which provider that is, so that you can ask them to remove it
+            there too.
           </li>
         </ul>
 
