@@ -4,8 +4,8 @@ export default function TermsPage() {
   return (
     <LegalShell
       title="Terms & Conditions"
-      updated="October 7, 2026"
-      updatedIso="2026-10-07"
+      updated="October 9, 2026"
+      updatedIso="2026-10-09"
       slug="terms"
       description="The terms that govern your use of Radious — the personal AI radio station with hosts you hire, message and call live on air."
     >
@@ -50,8 +50,11 @@ export default function TermsPage() {
             on-air messages per day, plus founder community access and feature
             voting). Starter and Pro put up to 2 hosts on air and Ultra up to 3. The
             Banter and Learning host-talk types are part of Pro and Ultra; Facts and
-            Philosophy are on every plan. We will tell you before any charge is ever
-            made.
+            Philosophy are on every plan. Premium host voices are part of Ultra, with
+            a daily allowance of speech. A host with a Premium voice speaks in a
+            standard voice instead on any other plan, once the day&rsquo;s allowance
+            is used up, and while the Premium voice&rsquo;s provider is unavailable.
+            We will tell you before any charge is ever made.
           </li>
           <li>
             There is also a free plan. It does not include shows of your own,
