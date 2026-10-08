@@ -119,8 +119,8 @@ export default function TermsPage() {
           </li>
           <li>
             <strong>Host voices.</strong> You choose your hosts&rsquo; voices from
-            the voice libraries of our text-to-speech providers, such as Fish
-            Audio. Most of those voices are made and published by the
+            the voice libraries of our text-to-speech providers, Fish Audio and
+            ElevenLabs. Most of those voices are made and published by the
             providers&rsquo; users, not by us. We may remove any voice from
             Radious at any time, for example one that imitates a real person
             without their permission. A host whose voice is removed carries on in
@@ -135,9 +135,8 @@ export default function TermsPage() {
             one, and how the voice concerns you. We will check the request and
             remove the voice from Radious: it can no longer be chosen, and hosts
             already using it switch to another voice. The voice itself is hosted
-            by the text-to-speech provider whose library it comes from. We will
-            tell you which provider that is, so that you can ask them to remove it
-            there too.
+            by Fish Audio or ElevenLabs, so to have it removed there too, contact
+            them.
           </li>
         </ul>
 
