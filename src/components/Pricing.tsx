@@ -34,6 +34,15 @@ import { appUrl, APP } from "~/lib/track";
  *    (CALLS_PER_USER_PER_DAY, default 5). A price card promising more
  *    call-ins than the server will grant is a refund request with a
  *    delay on it.
+ *
+ * 4. Premium host voices are Ultra's (`premiumVoices` in radious-api's
+ *    entitlements): the app's Premium tab, and the Premium voices on its
+ *    Official tab. Enforced twice in radious-api — the catalogues refuse
+ *    any other plan, and a Premium host airs in a standard stand-in voice
+ *    below Ultra. The line says "voices", not "unlimited": past the api's
+ *    daily Premium-voice allowance a Premium host is voiced by its
+ *    stand-in for the rest of the day (Terms section 3). The voice
+ *    provider is not named on this page.
  */
 
 const TIERS = [
@@ -78,6 +87,7 @@ const TIERS = [
       "5 studio calls a day",
       "100 on-air messages a day",
       "3 hosts on air",
+      "Premium host voices",
       "Founder community access",
       "Feature voting: you pick what ships",
       // Closes the card. Banter and Learning are NOT listed above it even
