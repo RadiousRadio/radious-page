@@ -3,10 +3,10 @@ import { Link, Meta, Title } from "@solidjs/meta";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 
-// The host that actually serves a 200. The apex 308-redirects here, so an
-// apex canonical / og:url / sitemap entry points one hop away from the
-// live page — which is the opposite of what a canonical is for.
-const SITE = "https://www.radious.ai";
+// The host that actually serves a 200. www redirects here, so a www
+// canonical / og:url / sitemap entry points one hop away from the live
+// page — which is the opposite of what a canonical is for.
+const SITE = "https://radious.ai";
 
 /**
  * Shared chrome AND head for the legal pages.
